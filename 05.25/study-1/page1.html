@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <style>
+      a {
+        color: inherit;
+        text-decoration: none;
+        transition: color 1s;
+      }
+      a:hover {
+        color: cyan;
+      }
+      .link {
+        width: max-content;
+      }
+      .link .link-bottom {
+        width: 0%;
+        height: 2px;
+        margin: auto;
+        background-color: blue;
+        transition: width 1s;
+      }
+      .link:hover .link-bottom {
+        width: 100%;
+      }
+      body {
+        transition: opacity 1s;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>여기는 페이지 1입니다.</h1>
+    <div class="link">
+      <a onclick="onClick()">페이지 이동</a>
+      <div class="link-bottom"></div>
+    </div>
+    <script>
+      function onClick() {
+        $('body').css('opacity', 0);
+        setTimeout(function() {
+          location.href = 'page2.html';
+        }, 1000); //1000밀리세컨드는 1초 즉 1초
+      }
+    </script>
+  </body>
+</html>
